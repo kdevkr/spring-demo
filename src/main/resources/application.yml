@@ -10,6 +10,11 @@ spring:
   mvc:
     async:
       request-timeout: 1m
+  task:
+    scheduling:
+      enabled: true
+      shutdown:
+        await-termination: on
 
 server:
   compression:
