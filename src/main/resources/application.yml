@@ -24,3 +24,8 @@ server:
     max-headers: 50
     max-cookies: 100
     always-set-keep-alive: on
+logging:
+  file:
+    path: logs
+    name: app.log
+
