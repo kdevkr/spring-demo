@@ -1,0 +1,13 @@
+spring:
+  main:
+    banner-mode: off
+    web-application-type: servlet
+
+server:
+  compression:
+    enabled: true
+  undertow:
+    max-http-post-size: 10MB
+    max-headers: 50
+    max-cookies: 100
+    always-set-keep-alive: on
