@@ -1,0 +1,5 @@
+server:
+  undertow:
+    accesslog:
+      dir: logs
+      enabled: true
