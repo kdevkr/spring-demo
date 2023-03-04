@@ -14,7 +14,8 @@ public class ApplicationStartupNotifier {
     @Scheduled(cron = "0 0/10 * * * ?")
     public void info() {
         String appStartTime = System.getProperty("APP_START_TIME");
-        Duration duration = Duration.between(Instant.parse(appStartTime), Instant.now());
-        log.info("Application has been running for {} hours, {} minutes", duration.toHoursPart(), duration.toMinutesPart());
+        Instant startTime = Instant.parse(appStartTime);
+        Duration duration = Duration.between(startTime, Instant.now());
+        log.info("Application has been running for {} hours, {} minutes after {}", duration.toHoursPart(), duration.toMinutesPart(), startTime);
     }
 }
