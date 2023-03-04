@@ -6,6 +6,7 @@ spring:
     include:
       - h2
       - access
+      - actuator
   mvc:
     async:
       request-timeout: 1m

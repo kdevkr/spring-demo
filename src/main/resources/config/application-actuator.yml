@@ -1,0 +1,12 @@
+spring:
+  main:
+    log-startup-info: true
+management:
+  info:
+    java.enabled: true
+    os.enabled: true
+  endpoints:
+    web:
+      base-path: /
+      path-mapping:
+        health: __health
