@@ -1,0 +1,8 @@
+server:
+  ssl:
+    certificate: 'classpath:cert/_wildcard.mambo.kr+4.pem'
+    certificate-private-key: 'classpath:cert/_wildcard.mambo.kr+4-key.pem'
+  http2:
+    enabled: on
+  http-port: 8080
+  port: 8443
