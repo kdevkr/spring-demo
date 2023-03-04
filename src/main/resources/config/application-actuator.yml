@@ -10,3 +10,8 @@ management:
       base-path: /
       path-mapping:
         health: __health
+        prometheus: __metrics
+      exposure:
+        include:
+          - health
+          - prometheus
