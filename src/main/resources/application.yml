@@ -5,6 +5,7 @@ spring:
   profiles:
     include:
       - h2
+      - session
       - access
       - actuator
   mvc:
@@ -15,7 +16,17 @@ spring:
       enabled: true
       shutdown:
         await-termination: on
-
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      username:
+      password: redispass
+  cache:
+    redis:
+      enable-statistics: on
+      time-to-live: 1h
+      cache-null-values: false
 server:
   compression:
     enabled: true
@@ -28,4 +39,3 @@ logging:
   file:
     path: logs
     name: app.log
-

@@ -1,0 +1,17 @@
+server:
+  servlet:
+    session:
+      persistent: on
+      cookie:
+        domain: mambo.kr
+        same-site: lax
+        max-age: 1h
+        secure: true
+        http-only: true
+      tracking-modes: cookie
+      timeout: 1h
+spring:
+  session:
+    store-type: memory
+    redis:
+      repository-type: indexed

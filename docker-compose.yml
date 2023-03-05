@@ -1,0 +1,28 @@
+version: '3'
+services:
+  redis:
+    container_name: redis
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server /etc/redis/redis.conf
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+      - redis_data:/data
+    restart: always
+    logging:
+      driver: json-file
+      options:
+        max-file: '5'
+        max-size: '10m'
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    sysctls:
+      # - vm.overcommit_memory=1 # Not support vm namespace
+      - net.core.somaxconn=1024
+      - net.ipv4.tcp_max_syn_backlog=1024
+
+volumes:
+  redis_data:
