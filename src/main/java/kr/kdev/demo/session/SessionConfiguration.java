@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.session.MapSessionRepository;
 import org.springframework.session.SessionRepository;
 import org.springframework.session.config.annotation.web.http.EnableSpringHttpSession;
+import org.springframework.session.web.context.AbstractHttpSessionApplicationInitializer;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -18,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 스프링 부트 3.x 부터는 spring.session.store-type의 지원이 사라졌으나 아래와 같이 인 메모리 방식으로도 구성할 수 있다.
  */
 @Configuration(proxyBeanMethods = false)
-public class SessionConfiguration {
+public class SessionConfiguration extends AbstractHttpSessionApplicationInitializer {
 
     private SessionConfiguration() {
     }
