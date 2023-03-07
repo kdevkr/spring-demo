@@ -1,14 +1,14 @@
 package kr.kdev.demo.controller;
 
 import org.springframework.context.MessageSource;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Locale;
 
 
-@RestController
+@Controller
 public class IndexController {
 
     private final MessageSource messageSource;
@@ -18,7 +18,8 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<String> index(Locale locale) {
-        return ResponseEntity.ok(messageSource.getMessage("msg.hello", null, locale));
+    public String index(Locale locale, Model model) {
+        model.addAttribute("msgHello", messageSource.getMessage("msg.hello", null, locale));
+        return "index";
     }
 }

@@ -33,6 +33,9 @@ spring:
     always-use-message-format: true
     use-code-as-default-message: true
     cache-duration: PT1H
+  freemarker:
+    settings:
+      auto_import: spring.ftl as spring
 server:
   compression:
     enabled: true
