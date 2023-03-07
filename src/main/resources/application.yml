@@ -28,6 +28,11 @@ spring:
       enable-statistics: on
       time-to-live: 1h
       cache-null-values: false
+  messages:
+    basename: classpath:i18n/messages
+    always-use-message-format: true
+    use-code-as-default-message: true
+    cache-duration: PT1H
 server:
   compression:
     enabled: true
