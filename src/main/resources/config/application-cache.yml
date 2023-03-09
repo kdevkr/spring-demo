@@ -1,0 +1,10 @@
+spring:
+  cache:
+    redis:
+      enable-statistics: true
+      key-prefix: spring-cache::
+      use-key-prefix: true
+      time-to-live: PT1H
+    type: redis
+    cache-names:
+      - locale
